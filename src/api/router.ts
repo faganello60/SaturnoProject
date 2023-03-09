@@ -8,11 +8,17 @@ const router: Router = Router()
 const insuranceBrokerService: InsuranceBrokerService = new InsuranceBrokerService(
     new EncryptPassword(20)
 );
-//const insuranceBrokerController: InsuranceBrokerController = new InsuranceBrokerController(insuranceBrokerService);
+const insuranceBrokerController: InsuranceBrokerController = new InsuranceBrokerController(insuranceBrokerService);
 
-//const insuranceBrokerPath = "/insuranceBroker";
+console.debug(
+    insuranceBrokerController
+);
+const insuranceBrokerPath = "/insuranceBroker";
 //Routes
 router.get("/");
-//router.post(insuranceBrokerPath, insuranceBrokerController.createInsurance);
-//router.get(insuranceBrokerPath, insuranceBrokerController.getInsurance);
+router.post(insuranceBrokerPath, insuranceBrokerController.createInsurance);
+router.get(insuranceBrokerPath, insuranceBrokerController.getInsurance);
+
+
+
 export { router }; 

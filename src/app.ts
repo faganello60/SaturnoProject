@@ -13,7 +13,6 @@ export class App{
 
   private middleware(){
     this.server.use(express.json());
-    this.server.use(express)
   }
 
   private router(){
